@@ -11,7 +11,7 @@ before_install:
   - docker build -t xtianexica/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true xtianexica/react-test npm test
+  - docker run xtianexica/react-test npm test -- --coverage
 
 after_success:
   - docker build -t xtianexica/multi-client ./client
