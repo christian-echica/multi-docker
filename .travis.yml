@@ -1,13 +1,10 @@
 sudo: required
-language: node_js
-node_js:
-  - 8
+language: generic
 
 services:
   - docker
 
 before_install:
-  - npm install --save enzyme enzyme-adapter-react-16 react-test-renderer
   - docker build -t xtianexica/react-test -f ./client/Dockerfile.dev ./client
 
 script:
